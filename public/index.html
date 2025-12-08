@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Simple AI Chatbot Demo</title>
+  <style>
+    body {font-family: Arial, sans-serif; max-width:900px; margin:20px auto; padding:0 16px;}
+    .chat {border:1px solid #ddd; border-radius:8px; padding:12px; min-height:300px; overflow:auto;}
+    .msg {margin:8px 0; padding:8px 10px; border-radius:6px; max-width:80%;}
+    .user {background:#e6f7ff; align-self:flex-end;}
+    .assistant {background:#f6f6f6;}
+    .controls {display:flex; gap:8px; margin-top:12px;}
+    .controls input, .controls select {padding:8px; font-size:14px;}
+    .controls button {padding:8px 12px;}
+    .row {display:flex; gap:8px; align-items:center;}
+  </style>
+</head>
+<body>
+  <h1>Simple AI Chatbot Demo</h1>
+  <p>Choose provider, model (if applicable), type message, and press Send.</p>
+  <div class="row">
+    <label>Provider:
+      <select id="provider">
+        <option value="openai">openai</option>
+        <option value="custom">custom (local ollama / other)</option>
+      </select>
+    </label>
+    <label>Model:
+      <input id="model" placeholder="model (e.g., gpt-4o-mini or ollama model)" />
+    </label>
+  </div>
+  <div id="chat" class="chat" style="display:flex;flex-direction:column;"></div>
+  <div class="controls">
+    <input id="input" style="flex:1;" placeholder="Type a message..." />
+    <button id="send">Send</button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
